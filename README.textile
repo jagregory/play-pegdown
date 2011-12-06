@@ -1,0 +1,60 @@
+h1. PegDown Markdown module Play!
+
+This is a module for the Play! framework which adds "Markdown":http://daringfireball.net/projects/markdown/ formatting support using the "pegdown":https://github.com/sirthias/pegdown library.
+
+h2. Usage
+
+There are currently two ways to use this module, as a tag and as an extension.
+
+<pre><code>#{markdown}
+    This content will be converted to Markdown.
+#{/markdown}
+
+${"this content will be converted to Markdown".markdown()}</code></pre>
+
+h2. Configuration
+
+For basic use, simply add the module to your @dependencies.yml@; for use of the "pegdown extensions":https://github.com/sirthias/pegdown/blob/master/README.markdown refer to the configuration options below.
+
+The available extensions can be seen in the "pegdown readme":https://github.com/sirthias/pegdown/blob/master/README.markdown. All extensions are listed below with the equivalent setting for your config. To enable any extension, add the appropriate setting to your @application.conf@ and set it to @true@.
+
+For example: @pegdown.autolinks=true@
+
+h3. Available options
+
+  * @pegdown.abbreviations@ -- Abbreviations in the way of <a href="http://michelf.com/projects/php-markdown/extra/#html">PHP Markdown Extra</a>.
+  * @pegdown.all@ -- Enable all extensions.
+  * @pegdown.autolinks@ -- Plain (undelimited) autolinks the way <a href="http://github.github.com/github-flavored-markdown/">Github-flavoured-Markdown</a> implements them.
+  * @pegdown.definitions@ -- Definition lists in the way of <a href="http://michelf.com/projects/php-markdown/extra/#html">PHP Markdown Extra</a>.
+  * @pegdown.fencedCodeBlocks@ -- Fenced Code Blocks in the way of <a href="http://michelf.com/projects/php-markdown/extra/#html">PHP Markdown Extra</a> or <a href="http://github.github.com/github-flavored-markdown/">Github-flavoured-Markdown</a>.
+  * @pegdown.hardwraps@ -- Alternative handling of newlines, see <a href="http://github.github.com/github-flavored-markdown/">Github-flavoured-Markdown</a>.
+  * @pegdown.none@ -- Disable all extensions.
+  * @pegdown.qoutes@ -- Beautifies single quotes, double quotes and double angle quotes.
+  * @pegdown.smarts@ -- Beautifies apostrophes, ellipses and dashes.
+  * @pegdown.smartypants@ -- Convenience extension for enabling both @pegdown.smarts@ and @pegdown.quotes@ at once, like <a href="http://daringfireball.net/projects/smartypants/">SmartyPants</a>.
+  * @pegdown.suppressAllHtml@ -- Suppresses the output of all HTML elements.
+  * @pegdown.suppressHtmlBlocks@ -- Suppresses the output of HTML block-level elements.
+  * @pegdown.suppressInlineHtml@ -- Suppresses the output of inline HTML elements.
+  * @pegdown.tables@ -- Tables similar to <a href="https://github.com/sirthias/pegdown/blob/master/which%20is%20in%20turn%20like%20the%20%5BPHP%20Markdown%20Extra%5D%20tables,%20but%20with%20colspan%20support">MultiMarkdown</a>.
+  * @pegdown.wikilinks@ -- Support @[[Wiki-style links]]@.
+
+h2. Alternatives/Why use this module?
+
+There's another <a href="https://github.com/orefalo/markdown">markdown module</a> for the Play! framework; however, it's only an implementation of the pure Markdown definition. For anyone who wants any of the extensions from <a href="http://github.github.com/github-flavored-markdown/">Github-flavoured-Markdown</a>, <a href="http://michelf.com/projects/php-markdown/extra/#html">PHP Markdown Extra</a>, or <a href="http://daringfireball.net/projects/smartypants/">SmartyPants</a>, then this is the module for you; otherwise, there's nothing else different between the two (although the other module claims to have better performance due to its underlying library).
+
+In short, it boils down to this: the markdown module is based on <a href="https://github.com/lruiz/MarkdownPapers">markdownPapers</a> and this module is based on <a href="https://github.com/sirthias/pegdown">pegdown</a>.
+
+h2. Credits
+
+  * <a href="http://daringfireball.net/projects/markdown/">Markdown</a> -- <a href="http://daringfireball.net/">John Gruber</a>
+  * <a href="http://daringfireball.net/projects/smartypants/">SmartyPants</a> -- <a href="http://daringfireball.net/">John Gruber</a>
+  * <a href="https://github.com/sirthias/pegdown">pegdown</a> -- <a href="http://www.decodified.com/">Mathias</a>
+  * <a href="https://github.com/jagregory/play-pegdown">play-pegdown</a> -- <a href="http://jagregory.com">James Gregory</a>
+
+h2. Bugs etc...
+
+Bugs should be raised on the "Github Issues list":https://github.com/jagregory/play-pegdown/issues and you can find the code and fork it in the "Github project":https://github.com/jagregory/play-pegdown.
+
+h2. History
+
+  * 0.1 -- First version, nothing fancy.
