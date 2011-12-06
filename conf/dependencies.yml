@@ -1,0 +1,4 @@
+self: play -> play-pegdown 0.1
+
+require:
+    - play
