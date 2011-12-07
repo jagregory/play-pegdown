@@ -12,6 +12,26 @@ There are currently two ways to use this module, as a tag and as an extension.
 
 ${"this content will be converted to Markdown".markdown()}</code></pre>
 
+h3. Whitespace trimming and preservation
+
+In the case of the tag, by default it will try to strip any leading whitespace caused by indentation; if this trimming causes you issue, you can pass the @preserveWhitespace:true@ option to the tag to disable it.
+
+<pre><code>#{markdown}
+    This content will be dedented.
+#{/markdown}</code></pre>
+
+Would be treated as if it were written like:
+
+<pre><code>#{markdown}
+This content will be dedented.
+#{/markdown}</code></pre>
+
+To disable this behaviour, you'd write:
+
+<pre><code>#{markdown preserveWhitespace:true}
+    This content will be dedented.
+#{/markdown}</code></pre>
+
 h2. Configuration
 
 For basic use, simply add the module to your @dependencies.yml@; for use of the "pegdown extensions":https://github.com/sirthias/pegdown/blob/master/README.markdown refer to the configuration options below.
