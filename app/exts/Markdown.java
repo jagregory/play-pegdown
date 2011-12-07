@@ -76,7 +76,7 @@ public class Markdown {
         String html = new PegDownProcessor(extensions)
             .markdownToHtml(markdown);
         
-        if (enabled("inlineSingleParagraph", overriddenConfigOptions)) {
+        if (enabled("inline", overriddenConfigOptions)) {
             html = inlineSingleParagraph(html);
         }
 

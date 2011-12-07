@@ -32,6 +32,16 @@ To disable this behaviour, you'd write:
     This content will be dedented.
 #{/markdown}</code></pre>
 
+h3. Inline mode
+
+If you only need to output a single paragraph of text and would rather markdown didn't produce the paragraph tag for you, then you can use the @inline:true@ switch or the @markdownInline@ extension.
+
+<pre><code>#{markdown inline:true}
+    This text won't produce a paragraph tag.
+#{/markdown}
+
+${"This text won't produce a paragraph tag.".markdownInline()}</code></pre>
+
 h2. Configuration
 
 For basic use, simply add the module to your @dependencies.yml@; for use of the "pegdown extensions":https://github.com/sirthias/pegdown/blob/master/README.markdown refer to the configuration options below.

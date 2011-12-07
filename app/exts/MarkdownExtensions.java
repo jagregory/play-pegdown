@@ -13,8 +13,7 @@ public class MarkdownExtensions extends JavaExtensions {
 
     public static BaseTemplate.RawData markdownInline(String markdown) {
         Map<Object, Object> opts = new HashMap<Object, Object>();
-
-        opts.put("inlineSingleParagraph", "true");
+        opts.put("inline", "true");
 
         return JavaExtensions.raw(Markdown.toHtml(markdown, opts));
     }
