@@ -57,6 +57,17 @@ h3. Available options
   * @pegdown.suppressInlineHtml@ -- Suppresses the output of inline HTML elements.
   * @pegdown.tables@ -- Tables similar to <a href="https://github.com/sirthias/pegdown/blob/master/which%20is%20in%20turn%20like%20the%20%5BPHP%20Markdown%20Extra%5D%20tables,%20but%20with%20colspan%20support">MultiMarkdown</a>.
   * @pegdown.wikilinks@ -- Support @[[Wiki-style links]]@.
+  
+h3. Inline extensions
+
+Extensions can be enabled/disabled on a per-use basis too when you're using the tag syntax; simply pass the extension name to the tag with @true@ or @false@ to enable or disable it.
+
+For example, to disable all HTML in a particular markdown block:
+
+<pre><code>#{markdown suppressAllHtml:true}
+    <p>This won't be processed.</p>
+    But this will.
+#{/markdown}</code></pre>
 
 h2. Alternatives/Why use this module?
 

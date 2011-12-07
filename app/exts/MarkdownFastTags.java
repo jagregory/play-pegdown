@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 public class MarkdownFastTags extends FastTags {
     final static Pattern WHITESPACE = Pattern.compile("^([\\s]+).*");
 
+    @SuppressWarnings("unchecked")
     public static void _markdown(Map args, Closure body, PrintWriter out, GroovyTemplate.ExecutableTemplate template, int fromLine) {
         String markdown = JavaExtensions.toString(body);
         Object preserveWhitespace = args.get("preserveWhitespace");
@@ -23,7 +24,7 @@ public class MarkdownFastTags extends FastTags {
             markdown = dedent(markdown, indentToTrim);
         }
         
-        String html = Markdown.toHtml(markdown);
+        String html = Markdown.toHtml(markdown, args);
 
         out.print(html);
     }
