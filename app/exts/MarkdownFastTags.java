@@ -61,7 +61,8 @@ public class MarkdownFastTags extends FastTags {
         StringBuilder sb = new StringBuilder(input.length());
         
         for (String line : lines) {
-            sb.append(ltrim(line, amount));
+            sb.append(ltrim(line, amount))
+              .append("\n");
         }
         
         return sb.toString();
